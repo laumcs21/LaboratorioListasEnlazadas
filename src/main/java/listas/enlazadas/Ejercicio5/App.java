@@ -1,4 +1,4 @@
-package listas.enlazadas.Ejercicio1;
+package listas.enlazadas.Ejercicio5;
 
 import listas.enlazadas.ListaSimple;
 import listas.enlazadas.Nodo;
@@ -9,22 +9,25 @@ public class App {
 
         lista.addFirst(3);
         lista.addFirst(4);
-        lista.addLast(7);
+        lista.addLast(3);
         lista.addFirst(9);
-        lista.addFirst(0);
+        lista.addFirst(3);
+        lista.addLast(2);
 
-        ObtenerPosicionesImpares(lista);
+        System.out.println(ContarRepeticiones(lista, 3));
 
     }
 
-    public static void ObtenerPosicionesImpares(ListaSimple<Integer> lista) {
+    public static int ContarRepeticiones(ListaSimple<Integer> lista, int dato) {
         Nodo<Integer> aux = lista.getNodoPrimero();
+        int contador = 0;
         int i = 0;
         for (; aux != null; aux = aux.getNodoSiguiente(), i++) {
-            if (i % 2 != 1)
-                continue;
 
-            System.out.println("Posición " + i + ": " + aux.getDato());
+            if (aux.getDato() == dato) {
+                contador++;
+            }
         }
+        return contador;
     }
 }

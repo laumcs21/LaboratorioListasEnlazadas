@@ -167,4 +167,6 @@ public class ListaDoble<T> implements Iterable<T> {
     public Iterator<T> iterator() {
         return new IteradorListaDoble(nodoPrimero, this);
     }
+
+   
 }

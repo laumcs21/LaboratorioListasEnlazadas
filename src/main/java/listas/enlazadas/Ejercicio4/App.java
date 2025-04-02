@@ -37,7 +37,7 @@ public class App {
 
             int dato = aux.getDato();
             
-            if (dato % 2 != 1){
+            if (dato % 2 == 0){
             continue;
             }
 

@@ -36,7 +36,7 @@ public class App {
             Persona persona = aux.getDato();
             String cedula = persona.getCedula();
 
-            if (cedula.length() % 2 != 0) {
+            if (cedula.length() % 2 == 1) {
                 continue;
             }
 

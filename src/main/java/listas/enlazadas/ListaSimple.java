@@ -150,6 +150,22 @@ public class ListaSimple<T> implements Iterable<T> {
         return vacio;
     }
 
+    public void imprimir() {
+        if (isEmpty()) {
+            System.out.println("La lista está vacía.");
+            return;
+        }
+    
+        Nodo<T> aux = nodoPrimero;
+        System.out.print("Lista: ");
+        while (aux != null) {
+            System.out.print(aux.getDato() + " ");
+            aux = aux.getNodoSiguiente();
+        }
+        System.out.println(); 
+    }
+    
+
     @Override
     public Iterator<T> iterator() {
         return null;

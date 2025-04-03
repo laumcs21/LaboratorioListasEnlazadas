@@ -2,16 +2,19 @@ package listas.enlazadas.Ejercicio7;
 
 import java.util.Iterator;
 
+import listas.enlazadas.ListaDoble;
 import listas.enlazadas.NodoDoble;
 
 public class IteradorListaDoble<T> implements Iterator<T> {
 
     private NodoDoble<T> nodo;
     private int posicion;
+    private ListaDoble<T> ListaDoble;
 
-    public IteradorListaDoble(NodoDoble<T> nodo) {
+    public IteradorListaDoble(NodoDoble<T> nodo, ListaDoble<T> lista) {
         this.nodo = nodo;
         this.posicion = 0;
+        this.ListaDoble = lista;
     }
 
     @Override
@@ -44,5 +47,25 @@ public class IteradorListaDoble<T> implements Iterator<T> {
 
     public int previousIndex() {
         return posicion - 1;
+    }
+
+    public void remove() {
+        if (nodo != null) {
+            ListaDoble.eliminar(nodo.getDato());
+        }
+    }
+
+    public void set(T e) {
+        if (nodo != null) {
+            nodo.setDato(e);
+        }
+    }
+
+    public void add(T e) {
+        ListaDoble.agregar(e, posicion);
+    }
+
+    public int getPosicion() {
+        return posicion;
     }
 }
